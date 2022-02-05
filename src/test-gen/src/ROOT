@@ -1,0 +1,20 @@
+
+session "HOL-TestGenLib" in "test" = HOL +
+  description {* HOL-TestGen Basic Libraries without Code-Generators and Testgenerator *}
+  (*directories "/cygdrive/c/Program Files (x86)/Isabelle HOL/Isabelle2021/hol-testgen-1.9.1/hol-testgen-1.9.1/src"*)
+  
+  theories
+    "TestLib"
+
+session "HOL-TestGen" (main) = "HOL-TestGenLib" +
+  description {* HOL-TestGen *}
+  (*directories "/cygdrive/c/Program Files (x86)/Isabelle HOL/Isabelle2021/hol-testgen-1.9.1/hol-testgen-1.9.1/src"*)
+  theories 
+    "codegen_fsharp/Code_String_Fsharp"
+    "codegen_fsharp/Code_Char_chr_Fsharp"
+    "codegen_fsharp/Code_Integer_Fsharp" 
+    "codegen_fsharp/Code_Char_Fsharp"
+    "codegen_gdb/Code_gdb_script"
+    "Testing"
+    "IOCO"
+    "SharedMemory"
