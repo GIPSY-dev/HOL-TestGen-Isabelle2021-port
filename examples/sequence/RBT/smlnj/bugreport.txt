@@ -1,0 +1,67 @@
+Title: Error in the delete operation red-black trees used for finite sets
+======
+Keyword: finite sets
+========
+
+SML/NJ Version Number: 110.44
+======================
+
+Severity: Major
+=========
+
+Description:
+============
+The delete operation of the red-black tree implementation used for finite maps 
+and sets returns binary search trees that are violating the red-black tree 
+invariants, i.e. it returns trees that are not balanced.
+This bug does not result in data loss, it only affects the runtime behavior
+of the finite set (map) implementation. In the worst case, delete returns 
+a linear list instead of a valid red-black tree.
+
+Note that we have proofed the correctness of the insertion function formally using 
+Isabelle/HOL. If you are interested, we could send you our formalization of 
+the SML/NJ red-black trees together with the proof scripts. We discovered this 
+bug when we used our HOL formalization of the SML red-black tree implementation 
+as a case study for a specification-based test data generation method described
+in [1]. You can also find a more visual description of the bug in this document.
+
+[1] Achim D. Brucker and Burkhart Wolff. Symbolic Test Case Generation for 
+    Primitive Recursive Functions. ETH Zürich, Technical Report 449, 2004.
+    http://www.brucker.ch/bibliography/abstract/brucker.ea-symbolic-2004
+    
+SML source code to reproduce the bug:
+=====================================
+(* load the content of sml-lib/Util/int-redblack-set.sml
+   into the interpreter and make all of its definition available
+   to the top-level environment, then execute
+ *)
+
+Control.Print.printDepth:=100;
+val s=add(empty,5);
+val s=add(s,6);
+val s=add(s,8);
+val s=add(s,2);
+val s=delete(s,8);
+
+
+Transcript of execution demonstrating the bug:
+===============================================
+- val s=add(empty,5);
+val s = SET (1,T (R,E,5,E)) : set
+- val s=add(s,6);
+val s = SET (2,T (B,E,5,T (R,E,6,E))) : set
+- val s=add(s,8);
+val s = SET (3,T (R,T (B,E,5,E),6,T (B,E,8,E))) : set
+- val s=add(s,2);
+val s = SET (4,T (B,T (B,T (R,E,2,E),5,E),6,T (B,E,8,E))) : set
+- val s=delete(s,8);
+val s = SET (3,T (B,E,2,T (B,T (R,E,5,E),6,E))) : set
+(* correct result should be:
+    s = SET (3,T (B,(B,E,2,E),5,(B,E,6,E)) : set
+ *)
+
+Additional comments:
+====================
+We tested (for simplicity) the IntRedBlackSet implementation, but the other
+redblack-tree variants, e.g. word-redblack-set.sml are also affected by
+this bug.

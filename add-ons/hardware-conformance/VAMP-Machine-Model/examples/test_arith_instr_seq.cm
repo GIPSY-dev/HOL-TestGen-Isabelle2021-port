@@ -1,0 +1,13 @@
+
+Group  is
+../../../../../../harness/sml/harness.sml
+VAMP_mutant.sml
+arith_instr_seq_script.sml
+../../../../../../harness/sml/main.sml
+
+#if(defined(SMLNJ_VERSION))
+  $/basis.cm 
+  $smlnj/compiler/compiler.cm
+#else
+#endif
+

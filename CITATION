@@ -1,0 +1,103 @@
+To cite HOL-TestGen in publications, please use
+
+  Achim D. Brucker and Burkhart Wolff. On Theorem Prover-based Testing. 
+  In Formal Aspects of Computing, 25 (5), pages 683-721, 2013.
+  doi: 10.1007/s00165-012-0222-y 
+
+A BibTeX entry for LaTeX users is
+
+@Article{	  brucker.ea:theorem-prover:2012,
+  title		= {On Theorem Prover-based Testing},
+  author	= {Achim D. Brucker and Burkhart Wolff},
+  journal	= {Formal Aspects of Computing},
+  publisher	= {Springer-Verlag},
+  address	= {Heidelberg},
+  language	= {USenglish},
+  categories	= {holtestgen},
+  year		= {2013},
+  issn		= {0934-5043},
+  pages		= {683--721},
+  volume	= {25},
+  number	= {5},
+  classification= journal,
+  areas		= {formal methods, software},
+  public	= {yes},
+  doi		= {10.1007/s00165-012-0222-y},
+  keywords	= {test case generation, domain partitioning, test sequence,
+		  theorem proving, HOL-TestGen},
+  abstract	= {HOL-TestGen is a specification and test case generation
+		  environment extending the interactive theorem prover
+		  Isabelle/HOL. As such, HOL-TestGen allows for an integrated
+		  workflow supporting interactive theorem proving, test case
+		  generation, and test data generation.
+		  
+		  The HOL-TestGen method is two-staged: first, the original
+		  formula is partitioned into test cases by transformation
+		  into a normal form called test theorem. Second, the test
+		  cases are analyzed for ground instances (the test data)
+		  satisfying the constraints of the test cases. Particular
+		  emphasis is put on the control of explicit test-hypotheses
+		  which can be proven over concrete programs.
+		  
+		  Due to the generality of the underlying framework, our
+		  system can be used for black-box unit, sequence, reactive
+		  sequence and white-box test scenarios. Although based on
+		  particularly clean theoretical foundations, the system can
+		  be applied for substantial case-studies. },
+  pdf		= {http://www.brucker.ch/bibliography/download/2012/brucker.ea-theorem-prover-2012.pdf},
+  url		= {http://www.brucker.ch/bibliography/abstract/brucker.ea-theorem-prover-2012}
+		  
+}
+
+To cite the testing of security policies (e.g., HOL-TestGen/FW), please use 
+
+  Achim D. Brucker, Lukas Brügger, and Burkhart Wolff. Formal Firewall Conformance 
+  Testing: An  Application of Test and Proof Techniques. In Software Testing, 
+  Verification & Reliability (STVR), 2014. doi: 10.1002/stvr.1544
+
+A BibTeX entry for LaTeX users is
+
+@Article{ brucker.ea:formal-fw-testing:2014,
+  title         = {Formal Firewall Conformance Testing: An Application of Test and Proof Techniques},
+  author	= {Achim D. Brucker and Lukas Br{\"u}gger and Burkhart Wolff},
+  journal	= {Software Testing, Verification & Reliability (STVR)},
+  publisher     = {pub-wiley},
+  address       = {pub-wiley:adr},
+  doi           = {10.1002/stvr.1544},
+  language	= {USenglish},
+  year	        = {2014},
+  abstract      = {Firewalls are an important means to secure critical ICT
+	           infrastructures. As configurable off-the-shelf
+	           prod\-ucts, the effectiveness of a firewall
+	           crucially depends on both the correctness of the
+	           implementation itself as well as the correct
+	           configuration. While testing the implementation can
+	           be done once by the manufacturer, the configuration
+	           needs to be tested for each application
+	           individually. This is particularly challenging as
+	           the configuration, implementing a firewall policy,
+	           is inherently complex, hard to understand,
+	           administrated by different stakeholders and thus
+	           difficult to validate. This paper presents a formal
+	           model of both stateless and stateful firewalls
+	           (packet filters), including NAT, to which a
+	           specification-based conformance test case
+	           generation approach is applied. Furthermore, a
+	           verified optimisation technique for this approach
+	           is presented: starting from a formal model for
+	           stateless firewalls, a collection of
+	           semantics-preserving policy transformation rules
+	           and an algorithm that optimizes the specification
+	           with respect of the number of test cases required
+	           for path coverage of the model are derived. We
+	           extend an existing approach that integrates
+	           verification and testing, that is, tests and proofs
+	           to support conformance testing of network
+	           policies. The presented approach is supported by a
+	           test framework that allows to test actual firewalls
+	           using the test cases generated on the basis of the
+	           formal model. Finally, a report on several larger
+	           case studies is presented.}, 
+  url           = {http://www.brucker.ch/bibliography/abstract/brucker.ea-formal-fw-testing-2014},
+  pdf           = {http://www.brucker.ch/bibliography/download/2014/brucker.ea-formal-fw-testing-2014.pdf}
+}

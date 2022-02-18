@@ -1,0 +1,41 @@
+           Testing the Red-Black Tree implementation of sml/NJ
+           ===================================================
+
+0) Files in this directory:
+---------------------------
+   README               - The file you are reading.
+   wrapper.sml          - A small wrapper for calling sml/NJ delete and 
+                          providing a simple toString method for red-black
+		          trees.
+   rbt_test.cm          - The CM file for building the test executable
+   int-redblack-set.sml - The red-black tree implementation of sml/NJ
+                          used for implementing finite sets.
+   int-redblack-set2.set- A better test set involving a little theorem
+                          proving.
+                
+1) How we obtained int-redblack-set.sml
+---------------------------------------
+The provided int-redblack-set.sml is the original implementation of red-black
+trees used in sml/NJ version 110.53 (and earlier). It was obtained by
+dowloading the smlnj library:
+http://smlnj.cs.uchicago.edu/dist/working/110.53/smlnj-lib.tgz
+Where the file is stored as: "smlnj-lib/Util/int-redblack-set.sml". The provided
+file is (with one exception) in its orginal state, we only opened the
+structure "IntRedBlackSet" i.e., a 
+"diff int-redblack-set.sml int-redblack-set.sml.orig" results in: 
+
+< structure IntRedBlackSet (*:> ORD_SET where type Key.ord_key = int*) =
+---
+> structure IntRedBlackSet :> ORD_SET where type Key.ord_key = int =
+
+
+2) Generating and building the test-script
+------------------------------------------
+First generate the test-script by changing your working directory to examples/RBT
+and calling 
+isatool make
+after that, go into examples/RBT/smlnj and start the smlnj interpreter, e.g.
+sml
+and load/build the test-executable by issuing:
+CM.make("rbt_test.cm").
+

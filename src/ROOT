@@ -1,0 +1,17 @@
+
+session "HOL-TestGenLib" = HOL +
+  description {* HOL-TestGen Basic Libraries without Code-Generators and Testgenerator *}
+  theories
+    "TestLib"
+
+session "HOL-TestGen" (main) = "HOL-TestGenLib" +
+  description {* HOL-TestGen *}
+  theories 
+    "codegen_fsharp/Code_String_Fsharp"
+    "codegen_fsharp/Code_Char_chr_Fsharp"
+    "codegen_fsharp/Code_Integer_Fsharp" 
+    "codegen_fsharp/Code_Char_Fsharp"
+    "codegen_gdb/Code_gdb_script"
+    "Testing"
+    "IOCO"
+    "SharedMemory"

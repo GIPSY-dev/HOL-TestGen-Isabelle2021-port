@@ -1,0 +1,11 @@
+
+To build the server run:
+  make
+
+To run a xsp instance hosting the server:
+  make run
+
+When the service is hosted execute
+  make test
+to build and run the test.
+

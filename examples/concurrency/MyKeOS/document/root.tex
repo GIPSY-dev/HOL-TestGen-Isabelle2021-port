@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%   This is a standard root.tex for HOL-TestGen Examples
+%%%%           that are part of the HOL-TestGen Manual.
+%%%%
+%%%%                      DO NOT MODIFY
+%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{ifvtex}
+\documentclass[11pt,a4paper,twoside=semi,DIV11,openright]{scrreprt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Overrides the (rightfully issued) warning by Koma Script that \rm
+%%% etc. should not be used (they are deprecated since more than a
+%%% decade)
+  \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+  \DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+  \DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+  \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+  \DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\getExampletitle{TITLE NOT DEFINED}
+\newcommand{\exampletitle}[1]{\def\getExampletitle{#1}}
+\newcommand{\copyrightyears}[1]{\def\getCopyrightyears{#1}}
+
+\IfFileExists{isabellesym.sty}{\usepackage{isabellesym}}{}
+\IfFileExists{isabelle.sty}{\usepackage{isabelle}}{}
+
+\providecommand{\isamarkupheader}[1]{\chapter{#1}}
+\providecommand{\isamarkupsection}[1]{\section{#1}}
+\providecommand{\isamarkupsubsection}[1]{\subsection{#1}}
+\providecommand{\isamarkupsubsubsection}[1]{\subsubsection{#1}}
+\providecommand{\isamarkupsect}[1]{\section{#1}}
+\providecommand{\isamarkupsubsect}[1]{\subsection{#1}}
+\providecommand{\isamarkupsubsubsect}[1]{\subsubsection{#1}}
+\providecommand{\isabellestyle}[1]{}
+
+\renewcommand{\isamarkupheader}[1]{\chapter{#1}}
+\renewcommand{\isamarkupsection}[1]{\section{#1}}
+\renewcommand{\isamarkupsubsection}[1]{\subsection{#1}}
+\renewcommand{\isamarkupsubsubsection}[1]{\subsubsection{#1}}
+\renewcommand{\isamarkupsect}[1]{\section{#1}}
+\renewcommand{\isamarkupsubsect}[1]{\subsection{#1}}
+\renewcommand{\isamarkupsubsubsect}[1]{\subsubsection{#1}}
+\isabellestyle{it}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[draft]{fixme}
+\usepackage{alltt}
+\usepackage{subfigure}
+\usepackage{xspace}
+\usepackage{stmaryrd}
+\usepackage[rounded,nounderscore]{syntax}
+\usepackage{makeidx}
+\usepackage{import}
+\usepackage{listings}
+\IfFileExists{lstisar.sty}{\usepackage{lstisar}}{}
+\setkomafont{captionlabel}{\bfseries}
+
+
+
+\definecolor{OliveGreen}    {cmyk}{0.64,0,0.95,0.40}
+\definecolor{BrickRed}      {cmyk}{0,0.89,0.94,0.28}
+\definecolor{Blue}          {cmyk}{1,1,0,0}
+\definecolor{CornflowerBlue}{cmyk}{0.65,0.13,0,0}
+
+
+
+\newcommand{\HOL}{HOL\xspace}
+
+\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\eg}{e.\,g.\xspace}
+\newcommand{\cf}{c.\,f.\xspace}
+
+
+
+
+%%%%%%%%%%%%%
+
+\newcommand{\isasymmodels}{\ensuremath{\models}}
+%%%%%%%%%%%%%%
+\newcommand{\isasymIF}{\texttt{IF}}
+\newcommand{\isasymDO}{\texttt{DO}}
+\newcommand{\isasymTHEN}{\texttt{THEN}}
+\newcommand{\isasymELSE}{\texttt{ELSE}}
+\newcommand{\isasymSKIP}{\texttt{SKIP}}
+\newcommand{\isasymWHILE}{\texttt{WHILE}}
+%%%%%%%%%%%%%%%
+\newcommand{\TNF}{TNF}
+\newcommand{\PUT}{\mathit{put}}
+\newcommand{\ioprog}{\mathit{ioprog}}
+\newcommand{\testgen}{HOL-TestGen\xspace}
+\newcommand{\testgenFW}{HOL-TestGen/FW}
+
+\newcommand{\svnrevision}{unofficial build}
+\newcommand{\testgenversion}{unofficial build}
+\newcommand{\isabelleversion}{xxxx}
+\newcommand{\TRversion}{unofficial build}
+\newcommand{\TRnumber}{unofficial build}  
+\newcommand{\testgenurl}{unofficial build}
+
+\setkomafont{sectioning}{\normalfont\normalcolor\bfseries}
+\setkomafont{descriptionlabel}{\normalfont\normalcolor\bfseries}
+\usepackage{graphicx}
+\usepackage{varioref}
+\usepackage[german,english,USenglish]{babel}
+
+
+\lstdefinestyle{SML}{language=ML,keywordstyle=\color{Blue}\textbf,%
+  ndkeywordstyle=\color{OliveGreen}\textbf,%
+  basicstyle=\footnotesize,%
+  columns=flexible,%
+  showlines=false,%
+  showspaces=false,%
+  escapeinside={(*@}{@*)}}
+
+\lstdefinestyle{C}{language=C,keywordstyle=\color{Blue}\textbf,basicstyle=\ttfamily\footnotesize}
+
+\lstdefinestyle{displaysml}{style=SML,%
+  floatplacement={tbp},captionpos=b,style=sml,framexleftmargin=10pt,%
+    numbers=left,numberstyle=\tiny,stepnumber=5,basicstyle=\small\ttfamily,%
+      backgroundcolor=\color{black!3},frame=lines,%xleftmargin=-8pt,xrightmargin=-8pt%
+      }
+
+\lstdefinestyle{displayc}{style=C,%
+  floatplacement={tbp},captionpos=b,style=sml,framexleftmargin=10pt,%
+    numbers=left,numberstyle=\tiny,stepnumber=5,basicstyle=\small\ttfamily,%
+      backgroundcolor=\color{black!3},frame=lines,%xleftmargin=-8pt,xrightmargin=-8pt%
+      }
+
+
+
+\lstnewenvironment{sml}{\lstset{style=displaysml}}{}
+\lstnewenvironment{ansic}{\lstset{style=displayc}}{}
+\def\inlinesml{\lstinline[style=SML,basicstyle=\ttfamily\normalsize]}
+
+\sloppy
+% this should be the last package used
+\usepackage{hyperref}
+
+\input{titlepage}
+
+\title{HOL-TestGen Showcase\\\getExampletitle}
+
+\hypersetup{%%
+  pdftitle    = {HOL-TestGen: User Guide}
+}
+
+\IfFileExists{release.tex}{\input{release.tex}}{}
+
+
+\selectlanguage{USenglish}
+
+\makeindex 
+
+
+\begin{document}
+
+
+
+\uppertitleback{
+  \getCopyrightyears
+
+  All rights reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+\begin{itemize} 
+     \item Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+      \item Redistributions in binary form must reproduce the above
+        copyright notice, this list of conditions and the following
+        disclaimer in the documentation and/or other materials provided
+       with the distribution.
+      \item Neither the name of the copyright holders nor the names of its
+        contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.
+\end{itemize} 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+}
+\lowertitleback{\textbf{Note:}\\
+  This manual describes \testgen{} version
+  \testgenversion~(r\svnrevision). The manual of 
+  version \TRversion{} is also available as technical
+  report number \TRnumber{} from the Laboratoire en Recherche en 
+  Informatique (LRI), Universit\'e Paris-Sud 11, France.}
+
+
+
+\maketitle
+
+\tableofcontents
+\cleardoublepage
+
+\input{main}
+
+\bibliographystyle{abbrv}
+\bibliography{root}
+
+\printindex
+\end{document}

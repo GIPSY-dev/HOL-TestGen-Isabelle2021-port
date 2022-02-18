@@ -1,0 +1,5 @@
+
+session "HOL-TestGen-FW" = "HOL-TestGen" +
+  description {* HOL-TestGen/FW *}
+  theories
+    "FWTesting"

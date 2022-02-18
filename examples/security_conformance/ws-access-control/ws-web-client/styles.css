@@ -1,0 +1,96 @@
+.multicolumn {
+  margin: 1em;
+  float: left;
+}
+.formgroup {
+  padding-bottom: 4em;
+}
+
+fieldset {
+	display:block;
+	border:none;
+	border-top:1px solid #e0e0e0;
+}
+fieldset legend {
+	font-weight:bold;
+	font-size:13px;
+	padding-right:10px;
+	color:#222;
+}
+form fieldset {
+	padding-top:15px;
+}
+fieldset div label, fieldset div.radio span.label {
+	float:left;
+	width:20em;
+  height: 2em;
+	font-family:Arial, Helvetica, sans-serif;
+}
+fieldset input, fieldset select, fieldset textarea {
+	padding:5px;
+	color:#333333;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+fieldset div.radio span input {
+  float: none;
+  width: auto;
+}
+fieldset div.radio span label {
+  float: none;
+  margin-right: 1em;
+  margin-left: 0.2em;
+  width: auto;
+  height: auto;
+}
+
+
+form input.formbutton {
+  float:right;
+  margin-top: 5px;
+  background: white;
+	font-family:Arial, Helvetica, sans-serif;
+  border: 2px solid #EEE;
+  border-size: 1px 1px 2px 2px;
+	font-weight:bold;
+	padding:5px 10px;
+	font-size:12px;
+}
+
+form fieldset span.success,
+form fieldset span.failed {
+  margin-left: 2em;
+  margin-top: 5px;
+  clear: left;
+  float: left;
+}
+
+form fieldset span.success {
+  color: green; 
+}
+
+form fieldset span.failed {
+  color: red; 
+}
+
+form fieldset span.hidden {
+  display: none;
+}
+
+table {
+  margin: 2em;
+  float: left;
+}
+
+ul.scrlinks {
+  list-style-type: none;
+}
+
+ul.scrlinks li {
+  display: inline;
+  padding: 0.5em;
+}
+

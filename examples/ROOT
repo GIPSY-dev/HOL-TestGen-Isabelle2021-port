@@ -1,0 +1,83 @@
+session "HOL-TestGen-Max" in "unit/Max" = "HOL-TestGen" +
+  theories 
+    Max_test
+
+session "HOL-TestGen-Triangle" in "unit/Triangle" = "HOL-TestGen" +
+  theories 
+    Triangle
+    Triangle_test
+
+session "HOL-TestGen-List" in "unit/List" = "HOL-TestGen" +
+  options [document = pdf,document_variants="document:outline=/proof,/ML",document_output=output]
+  theories 
+     "List_test"
+  document_files
+     "root.tex"
+     "root.bib"
+     "main.tex"
+     "titlepage.tex"
+     
+session "HOL-TestGen-ListVerified" in "unit/ListVerified" = "HOL-TestGen" +
+  theories 
+    List_Verified_test
+
+session "HOL-TestGen-RBT" in "unit/RBT" = "HOL-TestGen" +
+  theories 
+    RBT_def
+    RBT_test
+
+session "HOL-TestGen-AVL" in "unit/AVL" = "HOL-TestGen" +
+  theories
+    AVL_def
+    AVL_test
+
+session "HOL-TestGen-SharedMemory" in "sequence/SharedMemory" = "HOL-TestGen" +
+  options [quick_and_dirty]
+  theories 
+    SharedMemory_test
+
+session "HOL-TestGen-Bank" in "sequence/Bank" = "HOL-TestGen" +
+  options [quick_and_dirty, document = pdf,document_variants="document:outline=/proof,/ML",document_output=output]
+  theories 
+    Bank
+    NonDetBank
+  document_files
+     "root.tex"
+     "root.bib"
+     "main.tex"
+     "titlepage.tex"
+
+session "HOL-TestGen-MyKeOS" in "concurrency/MyKeOS" = "HOL-TestGen" +
+  options [quick_and_dirty, document = pdf,document_variants="document:outline=/proof,/ML",document_output=output]
+  theories 
+    MyKeOS
+    MyKeOS_test
+    MyKeOS_test_conc
+
+  document_files
+     "root.tex"
+     "root.bib"
+     "main.tex"
+     "titlepage.tex"
+
+session "HOL-TestGen-MyKeOS2" in "concurrency/MyKeOS" = "HOL-TestGen" +
+  options [quick_and_dirty(*, document = pdf,document_variants="document:outline=/proof,/ML",document_output=output*)]
+  theories 
+    MyKeOS
+    MyKeOS_test_conc
+  document_files
+     "root.tex"
+     "root.bib"
+     "main.tex"
+     "titlepage.tex"
+
+     
+session "HOL-TestGen-Sequence" in "sequence/RBT" = "HOL-TestGen" +
+  theories 
+    "../../unit/RBT/RBT_def"
+    RBT_seq_test
+    RBT_pfenning_seq_test
+    
+session "HOL-TestGen-MiniFTP" in "reactive_sequence" = "HOL-TestGen" +
+  theories 
+    "MiniFTP_test"
