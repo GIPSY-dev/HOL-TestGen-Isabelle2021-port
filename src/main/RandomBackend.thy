@@ -45,9 +45,9 @@ chapter {* The random solver *}
 
 theory RandomBackend
 imports 
-  HOL
-  Int
-  List
+  HOL.HOL
+  HOL.Int
+  HOL.List
   TestEnv
   BackendUtils
 

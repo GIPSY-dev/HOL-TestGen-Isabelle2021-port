@@ -45,9 +45,9 @@ chapter {* The QuickCheck backend *}
 
 theory QuickCheckBackend
 imports 
-  HOL
-  Int
-  List
+  HOL.HOL
+  HOL.Int
+  HOL.List
   TestEnv
   BackendUtils
 

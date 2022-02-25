@@ -5,11 +5,11 @@
 section \<open>Old Version of Bindings to Satisfiability Modulo Theories (SMT) solvers\<close>
 
 theory Old_SMT_patch
-imports Real (* "~~/src/HOL/Word/Word" *)
+imports HOL.Real (* "~~/src/HOL/Word/Word" *)
 keywords "old_smt_status" :: diag
 begin
 
-ML_file "~~/src/HOL/Library/Old_SMT/old_smt_utils.ML"
+ML_file "../Old_SMT/old_smt_utils.ML"
 ML_file "old_smt_failure_patch.ML"
 ML_file "old_smt_config_patch.ML"
 
@@ -115,18 +115,18 @@ definition z3mod :: "int \<Rightarrow> int \<Rightarrow> int" where
 
 subsection \<open>Setup\<close>
 
-ML_file "~~/src/HOL/Library/Old_SMT/old_smt_builtin.ML"
-ML_file "~~/src/HOL/Library/Old_SMT/old_smt_datatypes.ML"
+ML_file "../Old_SMT/old_smt_builtin.ML"
+ML_file "../Old_SMT/old_smt_datatypes.ML"
 ML_file "old_smt_normalize_patch.ML"
 ML_file "old_smt_translate_patch.ML"
 (*  This is the file that is actually patched.*)
 ML_file "old_smt_solver_patch.ML"
-ML_file "~~/src/HOL/Library/Old_SMT/old_smtlib_interface.ML"
+ML_file "../Old_SMT/old_smtlib_interface.ML"
 ML_file "old_z3_interface_patch.ML"
 ML_file "old_z3_proof_parser_patch.ML"
-ML_file "~~/src/HOL/Library/Old_SMT/old_z3_proof_tools.ML"
-ML_file "~~/src/HOL/Library/Old_SMT/old_z3_proof_literals.ML"
-ML_file "~~/src/HOL/Library/Old_SMT/old_z3_proof_methods.ML"
+ML_file "../Old_SMT/old_z3_proof_tools.ML"
+ML_file "../Old_SMT/old_z3_proof_literals.ML"
+ML_file "../Old_SMT/old_z3_proof_methods.ML"
 named_theorems old_z3_simp "simplification rules for Z3 proof reconstruction"
 ML_file "old_z3_proof_reconstruction_patch.ML"
 ML_file "old_z3_model_patch.ML"
@@ -421,7 +421,7 @@ lemma [old_z3_rule]:  (* for def-axiom *)
   "(if P then Q else \<not>R) \<or> P \<or> R"
   by auto
 
-ML_file "~~/src/HOL/Library/Old_SMT/old_smt_real.ML"
+ML_file "../Old_SMT/old_smt_real.ML"
 (* ML_file "~~/src/HOL/Library/Old_SMT/old_smt_word.ML" *)
 
 hide_type (open) pattern

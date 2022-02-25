@@ -60,7 +60,7 @@ session "HOL-TestGen-MyKeOS" in "concurrency/MyKeOS" = "HOL-TestGen" +
      "main.tex"
      "titlepage.tex"
 
-session "HOL-TestGen-MyKeOS2" in "concurrency/MyKeOS" = "HOL-TestGen" +
+session "HOL-TestGen-MyKeOS2" in "concurrency/MyKeOS2" = "HOL-TestGen" +
   options [quick_and_dirty(*, document = pdf,document_variants="document:outline=/proof,/ML",document_output=output*)]
   theories 
     MyKeOS

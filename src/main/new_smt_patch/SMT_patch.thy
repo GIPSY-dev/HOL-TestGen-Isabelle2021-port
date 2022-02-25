@@ -5,7 +5,7 @@
 section \<open>Bindings to Satisfiability Modulo Theories (SMT) solvers based on SMT-LIB 2\<close>
 
 theory SMT_patch
-imports Divides
+imports HOL.Divides
 keywords "smt_status_patch" :: diag
 begin
 
@@ -166,7 +166,7 @@ ML_file "~~/src/HOL/Tools/SMT/verit_isar.ML"
 ML_file "~~/src/HOL/Tools/SMT/verit_proof_parse.ML" *)
 ML_file "~~/src/HOL/Tools/SMT/conj_disj_perm.ML"
 ML_file "~~/src/HOL/Tools/SMT/z3_interface.ML"
-ML_file "~~/src/HOL/Tools/SMT/z3_replay_util.ML"
+(*ML_file "../SMT/z3_replay_util.ML"*)
 ML_file "~~/src/HOL/Tools/SMT/z3_replay_rules.ML"
 ML_file "~~/src/HOL/Tools/SMT/z3_replay_methods.ML"
 ML_file "z3_replay_patch.ML"
